@@ -1,0 +1,20 @@
+{
+  "version": "5",
+  "dialect": "pg",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1683386713989,
+      "tag": "0000_high_stephen_strange",
+      "breakpoints": false
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1683401404953,
+      "tag": "0001_lively_forge",
+      "breakpoints": false
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+ALTER TABLE "rules" ALTER COLUMN "name" SET NOT NULL;
+ALTER TABLE "rules" ADD COLUMN "owner" text NOT NULL;
