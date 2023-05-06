@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "db:mg:apply && next build",
+    "build": "npm run db:mg:apply && next build",
     "start": "next start",
     "lint": "next lint",
     "db:mg:create": "drizzle-kit generate:pg",
