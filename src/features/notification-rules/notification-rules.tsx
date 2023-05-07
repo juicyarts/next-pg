@@ -3,12 +3,11 @@ import ExistingRuleRow from './existing-rule-row';
 import { getRules } from './rule-actions';
 
 export const getNotifcationRules = async () => {
-  const data = await getRules();
-  return data.map((item) => <ExistingRuleRow rule={item} key={item.id} />);
+  return await getRules();
 };
 
 export default async function NotificationRules() {
-  const rows = await getNotifcationRules();
+  const data = await getNotifcationRules();
 
   return (
     <div className="container mx-auto">
@@ -19,7 +18,9 @@ export default async function NotificationRules() {
           <div className="px-6 py-4 whitespace-nowrap">Action</div>
         </li>
         <NewRuleRow />
-        {rows}
+        {data.map((item) => (
+          <ExistingRuleRow rule={item} key={item.id} />
+        ))}
       </ul>
     </div>
   );
