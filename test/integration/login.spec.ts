@@ -12,6 +12,7 @@ dotenv.config();
 // Otherwise, we use the Production URL.
 const username = process.env.USER_NAME || 'foo';
 const userpassword = process.env.USER_PASSWORD || 'bar';
+const loginUrl = process.env.LOGIN_URL || '*.clerk.com';
 
 test('visit page and take screenshot', async ({ page }) => {
   // We visit the page. This waits for the "load" event by default.
@@ -65,6 +66,6 @@ test('visit page and take screenshot', async ({ page }) => {
   // sign out
   await page.getByRole('button', { name: 'Sign out' }).click();
 
-  await page.waitForURL('https://accounts.juicyarts.de/*');
+  await page.waitForURL(loginUrl);
   await page.getByRole('heading', { name: 'Sign in' }).click();
 });
