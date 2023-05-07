@@ -44,7 +44,6 @@ export async function createRule(data: FormData) {
 
     const result = await db.insert(notificationRules).values(insertValues);
     revalidateTag('notification-rules');
-    console.info('result', result);
     return [result, null];
   } catch (error: any) {
     console.error('error', error);
@@ -75,7 +74,6 @@ export async function deleteRule(id: number) {
       .delete(notificationRules)
       .where(and(eq(notificationRules.id, id), eq(notificationRules.owner, session.sub)));
     revalidateTag('notification-rules');
-    console.info('result', result);
     return [result, null];
   } catch (error: any) {
     console.error('error', error);

@@ -9,10 +9,6 @@ export default function NewRuleRow() {
     if (error) {
       console.error(error);
     }
-
-    if (result) {
-      console.log(result);
-    }
   }
 
   return (

@@ -1,4 +1,4 @@
-import { IconDeviceFloppy, IconTrash } from '@tabler/icons-react';
+import { IconTrash } from '@tabler/icons-react';
 import { deleteRule } from './rule-actions';
 import { NotificationRule } from '@/models/notification-rule.definition';
 
@@ -10,10 +10,6 @@ export default function ExistingRuleRow({ rule }: { rule: NotificationRule }) {
 
     if (error) {
       console.error(error);
-    }
-
-    if (result) {
-      console.log(result);
     }
   }
 

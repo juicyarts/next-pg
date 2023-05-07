@@ -1,10 +1,15 @@
 import NewRuleRow from './new-rule-row';
 import ExistingRuleRow from './existing-rule-row';
 import { getRules } from './rule-actions';
+import { cache } from 'react';
+
+export const getNotifcationRules = cache(async () => {
+  const data = await getRules();
+  return data.map((item) => <ExistingRuleRow rule={item} key={item.id} />);
+});
 
 export default async function NotificationRules() {
-  const data = await getRules();
-  const rows = data.map((item) => <ExistingRuleRow rule={item} key={item.id} />);
+  const rows = await getNotifcationRules();
 
   return (
     <div className="container mx-auto">
