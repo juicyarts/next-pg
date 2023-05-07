@@ -1,8 +1,7 @@
-'use client';
-
 import { OrganizationSwitcher, UserButton } from '@clerk/nextjs';
 import { ActionIcon, useMantineColorScheme } from '@mantine/core';
-import { IconMoonStars, IconSun } from '@tabler/icons-react';
+
+import { MoonIcon, SunIcon } from '@heroicons/react/24/solid';
 
 export default function Header() {
   const { colorScheme, toggleColorScheme } = useMantineColorScheme();
@@ -30,7 +29,7 @@ export default function Header() {
               title="Toggle color scheme"
               className="m-2"
             >
-              {dark ? <IconSun size="1.1rem" color="#fff" /> : <IconMoonStars size="1.1rem" />}
+              {dark ? <SunIcon /> : <MoonIcon />}
             </ActionIcon>
           </div>
         </div>

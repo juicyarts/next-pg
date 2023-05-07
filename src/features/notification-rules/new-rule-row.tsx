@@ -1,11 +1,11 @@
 import { createRule } from './rule-actions';
-import { IconPlus } from '@tabler/icons-react';
+import { PlusIcon } from '@heroicons/react/24/solid';
 
 export default function NewRuleRow() {
   async function action(data: FormData) {
     'use server';
 
-    const [result, error] = await createRule(data);
+    const [, error] = await createRule(data);
     if (error) {
       console.error(error);
     }
@@ -26,9 +26,9 @@ export default function NewRuleRow() {
             required
           />
         </div>
-        <div className=" px-6 py-4 flex items-center">
+        <div className="px-6 py-4 flex items-center">
           <button type="submit" tabIndex={0}>
-            <IconPlus />
+            <PlusIcon className="h-5 w-5" />
           </button>
         </div>
       </form>

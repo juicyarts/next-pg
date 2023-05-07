@@ -1,12 +1,10 @@
 'use client';
 
-import { useState } from 'react';
-import { AppShell, Header, useMantineTheme, Navbar } from '@mantine/core';
+import { AppShell, Header, useMantineTheme } from '@mantine/core';
 import AppHeader from '@/components/header';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const theme = useMantineTheme();
-  const [opened, setOpened] = useState(false);
 
   return (
     <AppShell
