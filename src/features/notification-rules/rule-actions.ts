@@ -41,8 +41,8 @@ export async function createRule(data: FormData) {
 
   try {
     NotificationRuleSchema.parse(insertValues);
-
     const result = await db.insert(notificationRules).values(insertValues);
+
     revalidateTag('notification-rules');
     return [result, null];
   } catch (error: any) {
@@ -73,6 +73,7 @@ export async function deleteRule(id: number) {
     const result = await db
       .delete(notificationRules)
       .where(and(eq(notificationRules.id, id), eq(notificationRules.owner, session.sub)));
+
     revalidateTag('notification-rules');
     return [result, null];
   } catch (error: any) {
