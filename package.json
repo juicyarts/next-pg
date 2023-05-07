@@ -10,7 +10,8 @@
     "db:mg:create": "drizzle-kit generate:pg",
     "db:mg:apply": "ts-node --project tsconfig.migration.json ./src/db/migrate",
     "db:check": "drizzle-kit check:pg",
-    "db:up": "drizzle-kit up:pg"
+    "db:up": "drizzle-kit up:pg",
+    "test:integration": "npx playwright test --headed --reporter=list"
   },
   "dependencies": {
     "@clerk/nextjs": "^4.17.1",

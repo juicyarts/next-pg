@@ -61,7 +61,7 @@ test('visit page and take screenshot', async ({ page }) => {
   await page.waitForResponse((resp) => resp.url().includes('/dashboard'));
 
   // open user menu
-  await page.getByRole('banner').getByRole('button').nth(1).click();
+  await page.getByRole('button').nth(1).click();
   // sign out
   await page.getByRole('button', { name: 'Sign out' }).click();
 
